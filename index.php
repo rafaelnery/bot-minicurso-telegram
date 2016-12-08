@@ -37,6 +37,25 @@ if($update->has('message')) {
                     'text' => 'Eu tenho a força....',
                     'reply_to_message_id' => $message->getMessageId()
                 ]);
+                break;
+            case '/php':
+                $telegram->sendPhoto([
+                    'chat_id' => getenv('CHAT_ID'),
+                    //'photo' => $inputFile->open(),
+                    'photo' => 'http://php.net/manual/en/images/c0d23d2d6769e53e24a1b3136c064577-php_logo.png',
+                    'caption' => 'PHP!!!'
+                ]);
+                break;
+            case '/renan':
+            case '/scar':
+
+                $telegram->sendPhoto([
+                    'chat_id' => getenv('CHAT_ID'),
+                    //'photo' => $inputFile->open(),
+                    'photo' => 'http://img.saraivaconteudo.com.br/Clipart/Photo/158/39621_.jpg',
+                    'caption' => 'Nha!!!'
+                ]);
+                break;
             case '/start':
             case (preg_match('/^\/start (?<token>[a-f0-9]{32})/', $text, $matches) ? true : false):
                 break;
