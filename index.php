@@ -30,6 +30,13 @@ if($update->has('message')) {
                     'reply_to_message_id' => $message->getMessageId()
                 ]);
                 break;
+            case '/heman':
+            case '/he-man':
+                 $telegram->sendMessage([
+                    'chat_id' => $message->getChat()->getId(),
+                    'text' => 'Eu tenho a força....',
+                    'reply_to_message_id' => $message->getMessageId()
+                ]);
             case '/start':
             case (preg_match('/^\/start (?<token>[a-f0-9]{32})/', $text, $matches) ? true : false):
                 break;
