@@ -40,7 +40,7 @@ if($update->has('message')) {
                 break;
             case '/php':
                 $telegram->sendPhoto([
-                    'chat_id' => getenv('CHAT_ID'),
+                    'chat_id' => $message->getChat()->getId(),
                     'photo' => 'http://php.net/manual/en/images/c0d23d2d6769e53e24a1b3136c064577-php_logo.png',
                     'caption' => 'PHP!!!'
                 ]);
@@ -48,8 +48,7 @@ if($update->has('message')) {
             case '/renan':
             case '/scar':
                 $telegram->sendPhoto([
-                    'chat_id' => getenv('CHAT_ID'),
-                    //'photo' => $inputFile->open(),
+                    'chat_id' => $message->getChat()->getId(),
                     'photo' => 'http://img.saraivaconteudo.com.br/Clipart/Photo/158/39621_.jpg',
                     'caption' => 'Nha!!!'
                 ]);
